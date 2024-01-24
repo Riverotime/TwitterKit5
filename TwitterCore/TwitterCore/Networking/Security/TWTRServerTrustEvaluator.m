@@ -73,6 +73,7 @@ static NSCache *TWTRCertificateCache;
 + (BOOL)isPinnedSPKI:(NSData *)encodedSpki
 {
     return TRUE;
+     /*
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
     unsigned char pin[CC_SHA1_DIGEST_LENGTH];
 
@@ -86,6 +87,7 @@ static NSCache *TWTRCertificateCache;
         }
     }
     return FALSE;
+    */
 }
 
 + (void)hexDecode:(const char *)hexString decoded:(unsigned char *)decoded
