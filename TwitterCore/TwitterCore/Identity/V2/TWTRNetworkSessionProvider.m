@@ -65,7 +65,7 @@
     NSURLRequest *signedVerifyRequest = [TWTRUserAuthRequestSigner signedURLRequest:verifyRequest authConfig:authConfig session:userSession];
     NSURLSessionDataTask *verifySessionTask = [URLSession dataTaskWithRequest:signedVerifyRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *connectionError) {
         if (connectionError) {
-            NSLog(@"[TwitterKit] Cannot verify session credentials.");
+            NSLog(@"[TwitterKit] verifyUserSession Cannot verify session credentials.");
             completion(nil, connectionError);
             return;
         }
@@ -85,7 +85,7 @@
     NSURLRequest *signedVerifyRequest = [TWTRUserAuthRequestSigner signedURLRequest:verifyRequest authConfig:authConfig session:tokenOnlySession];
     NSURLSessionDataTask *verifySessionTask = [URLSession dataTaskWithRequest:signedVerifyRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *connectionError) {
         if (connectionError) {
-            NSLog(@"[TwitterKit] Cannot verify session credentials.");
+            NSLog(@"[TwitterKit] verifySessionWithAuthToken Cannot verify session credentials.");
             completion(nil, connectionError);
             return;
         }
