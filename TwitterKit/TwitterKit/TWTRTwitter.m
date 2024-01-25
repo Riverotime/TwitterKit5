@@ -317,7 +317,7 @@ static TWTRTwitter *sharedTwitter;
 {
     TWTRParameterAssertOrReturn(completion);
     [self assertTwitterKitInitialized];
-
+    NSLog(@"Login ++++++++");
     TWTRLoginURLParser *loginURLParser = [[TWTRLoginURLParser alloc] initWithAuthConfig:self.sessionStore.authConfig];
     if (![loginURLParser hasValidURLScheme]) {
         // Throws exception if the app does not have a valid scheme
