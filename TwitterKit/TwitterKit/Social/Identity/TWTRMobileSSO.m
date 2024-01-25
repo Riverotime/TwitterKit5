@@ -77,7 +77,15 @@
 - (BOOL)isSSOWithURL:(NSURL *)url
 {
     if (url == nil) return NO;
-    return YES;
+
+    BOOL isSSO = [url.host containsString:@"secret="] &&
+                 [url.host containsString:@"token="] &&
+                 [url.host containsString:@"username="];
+                 
+    if (isSSO) {
+        NSLog(@"SSO URL Detected: %@", url.host);
+    }
+    return isSSO
 }
 
 - (BOOL)isWebWithURL:(NSURL *)url
